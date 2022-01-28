@@ -2,10 +2,12 @@
   (:gen-class)
   (:require [ring.adapter.jetty :as jetty]))
 
+(def message (System/getenv "MESSAGE"))
+
 (defn handler [request-map]
    {:status 200
-    :headers {"Content-Type" "text/html"}
-    :body (str "<html><body>Hello Clojure!</body></html>")})
+    :headers {"Content-Type" "application/json"}
+    :body (str "{\"message\": \"" message "\"}")})
 
 (defn -main []
   (jetty/run-jetty

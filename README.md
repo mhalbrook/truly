@@ -2,15 +2,31 @@
 
 FIXME: description
 
-## Installation
+## Repo URL
 
-Download from http://example.com/FIXME.
+git clone https://github.com/mhalbrook/truly.git
 
 ## Usage
 
-FIXME: explanation
+### Description
+Clojure service that returns a json object containing a message that is dynamically set by teh MESSAGE system environment variable.
 
-    $ java -jar clojure-test-0.1.0-standalone.jar [args]
+### Building
+To build the application with docker, run:
+            docker build -t [tag] .
+
+To build the application locally, run:
+            lein run
+
+
+### Running the application
+To run the docker container, run:
+            docker run -e MESSAGE=[message]-dp [port]:8080 [tag]
+where [message] is the string that you would like returned in the json object response and [tag] is the tag set in the docker build step.
+
+
+
+
 
 ## Options
 
